@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="LoraRelais" />
+		<Option pch_mode="2" />
+		<Option compiler="avr-gcc" />
+		<Build>
+			<Target title="atxmega32a4u">
+				<Option output="bin/Release/LoraRelais.elf" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="5" />
+				<Option compiler="avr-gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-Os" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-mmcu=atxmega32a4u" />
+					<Add option="-c -fpermissive" />
+					<Add option="-Wno-enum-compare" />
+					<Add option="-MD -MP -MF" />
+					<Add option="-ffunction-sections" />
+					<Add option="-fdata-sections" />
+					<Add option="-fpack-struct" />
+					<Add option="-funsigned-char" />
+					<Add option="-funsigned-bitfields" />
+					<Add option="-fshort-enums" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DRECEIVER_BUILT" />
+					<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/lib/avrxmega2" />
+					<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/include" />
+					<Add directory="../LoraRelais" />
+					<Add directory="../communication" />
+					<Add directory="./" />
+					<Add directory="/home/christof/Daten/Software/repositories/LoRa-for-ATxMega/src" />
+					<Add directory="/home/christof/Daten/Software/repositories/spi" />
+					<Add directory="/home/christof/Daten/Software/repositories/ComReceiver" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,-u,vfprintf" />
+					<Add option="-Wl,--gc-sections" />
+					<Add library="libm" />
+					<Add library="libprintf_flt" />
+				</Linker>
+			</Target>
+			<Environment>
+				<Variable name="MCU" value="atxmega32a4u" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-Os" />
+			<Add option="-Wall" />
+			<Add option="-mmcu=atxmega32a4u" />
+			<Add option="-c -fpermissive" />
+			<Add option="-Wno-enum-compare" />
+			<Add option="-MD -MP -MF" />
+			<Add option="-ffunction-sections" />
+			<Add option="-fdata-sections" />
+			<Add option="-fpack-struct" />
+			<Add option="-funsigned-char" />
+			<Add option="-funsigned-bitfields" />
+			<Add option="-fshort-enums" />
+			<Add option="-DF_CPU=32000000UL" />
+			<Add directory="/home/christof/repositories/communication" />
+			<Add directory="/home/christof/Daten/Software/repositories/Secrets" />
+		</Compiler>
+		<Linker>
+			<Add option="-mmcu=atxmega32a4u" />
+			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
+			<Add option="-Wl,-u,vfprintf" />
+			<Add option="-Wl,--gc-sections" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="avr-objdump -h -S $(TARGET_OUTPUT_FILE) &gt; $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).lss" />
+			<Add after="avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
+			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).eep" />
+			<Add after="avr-objcopy --no-change-warnings -j .lock --change-section-lma .lock=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).lock" />
+			<Add after="avr-objcopy --no-change-warnings -j .signature --change-section-lma .signature=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).sig" />
+			<Add after="avr-objcopy --no-change-warnings -j .fuse --change-section-lma .fuse=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).fuse" />
+			<Add after="avr-size $(TARGET_OUTPUT_FILE)" />
+		</ExtraCommands>
+		<Unit filename="../Arduino4AtXmega/Print.cpp" />
+		<Unit filename="../Arduino4AtXmega/Print.h" />
+		<Unit filename="../Arduino4AtXmega/Printable.h" />
+		<Unit filename="../Arduino4AtXmega/Stream.cpp" />
+		<Unit filename="../Arduino4AtXmega/Stream.h" />
+		<Unit filename="../Arduino4AtXmega/WString.cpp" />
+		<Unit filename="../Arduino4AtXmega/WString.h" />
+		<Unit filename="../ComReceiver/ComReceiver.cpp" />
+		<Unit filename="../ComReceiver/ComReceiver.h" />
+		<Unit filename="../ComReceiver/cmultiStandardCommands.cpp" />
+		<Unit filename="../ComReceiver/cmultiStandardCommands.h" />
+		<Unit filename="../LoRa-for-ATxMega/src/LoRa.cpp" />
+		<Unit filename="../LoRa-for-ATxMega/src/LoRa.h" />
+		<Unit filename="../Secrets/secrets.h" />
+		<Unit filename="../communication/CRC_Calc.cpp" />
+		<Unit filename="../communication/CRC_Calc.h" />
+		<Unit filename="../communication/Cmulti2Buffer.cpp" />
+		<Unit filename="../communication/Cmulti2Buffer.h" />
+		<Unit filename="../communication/CmultiBusy.h" />
+		<Unit filename="../communication/Communication.cpp" />
+		<Unit filename="../communication/Communication.h" />
+		<Unit filename="../communication/Serial.cpp" />
+		<Unit filename="../communication/Serial.h" />
+		<Unit filename="../communication/UART.h" />
+		<Unit filename="../spi/SPI.cpp" />
+		<Unit filename="../spi/SPI.h" />
+		<Unit filename="../spi/spi_driver.cpp" />
+		<Unit filename="../spi/spi_driver.h" />
+		<Unit filename="../xmegaClocks/xmegaClocks.cpp" />
+		<Unit filename="../xmegaClocks/xmegaClocks.h" />
+		<Unit filename="External.h" />
+		<Unit filename="Globals.cpp" />
+		<Unit filename="LoraRelais.cpp" />
+		<Unit filename="LoraRelais.h" />
+		<Unit filename="LoraRelaisCommands.cpp" />
+		<Unit filename="LoraRelaisCommands.h" />
+		<Unit filename="Operators.cpp" />
+		<Unit filename="Operators.h" />
+		<Unit filename="loraHardware.h" />
+		<Unit filename="myConstants.h" />
+		<Unit filename="spiHardware.h" />
+		<Unit filename="uartHardware.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

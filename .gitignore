@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+-ffunction-sections
+
+*.depend
+
+*.layout
+
+LoraRelais.cscope_file_list
+
+sig.txt
