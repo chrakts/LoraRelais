@@ -40,3 +40,7 @@
 LoraRelais.cscope_file_list
 
 sig.txt
+
+bin/Release/
+
+fromChip/

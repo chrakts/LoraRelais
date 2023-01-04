@@ -91,7 +91,7 @@ void sendViaRelay(char *relayText)
 
 void string2RelaisInfo(RelaisInfo *rinfo,const char *info)
 {
-
+// TTSSFAJETTTT....TTT
 int8_t l;
   l = strlen(info);
   if( l>=8 )
@@ -107,8 +107,7 @@ int8_t l;
     if( (l>0) & (l<LORACMULTIBUFFERR_LENGTH-10) )
     {
       rinfo->endChar = info[8];
-      strncpy(rinfo->content,&(info[9
-                               ]),l);
+      strncpy(rinfo->content,&(info[9]),l);
       rinfo->content[l] = 0;
     }
     else
