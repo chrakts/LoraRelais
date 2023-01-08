@@ -29,14 +29,6 @@
 					<Add option="-fshort-enums" />
 					<Add option="-DNDEBUG" />
 					<Add option="-DRECEIVER_BUILT" />
-					<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/lib/avrxmega2" />
-					<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/include" />
-					<Add directory="../LoraRelais" />
-					<Add directory="../communication" />
-					<Add directory="./" />
-					<Add directory="/home/christof/Daten/Software/repositories/LoRa-for-ATxMega/src" />
-					<Add directory="/home/christof/Daten/Software/repositories/spi" />
-					<Add directory="/home/christof/Daten/Software/repositories/ComReceiver" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -66,6 +58,15 @@
 			<Add option="-DF_CPU=32000000UL" />
 			<Add directory="/home/christof/repositories/communication" />
 			<Add directory="/home/christof/Daten/Software/repositories/Secrets" />
+			<Add directory="../loraCmulti" />
+			<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/lib/avrxmega2" />
+			<Add directory="/home/christof/Downloads/avr8-gnu-toolchain-linux_x86_64/avr/include" />
+			<Add directory="../LoraRelais" />
+			<Add directory="../communication" />
+			<Add directory="./" />
+			<Add directory="/home/christof/Daten/Software/repositories/LoRa-for-ATxMega/src" />
+			<Add directory="/home/christof/Daten/Software/repositories/spi" />
+			<Add directory="/home/christof/Daten/Software/repositories/ComReceiver" />
 		</Compiler>
 		<Linker>
 			<Add option="-mmcu=atxmega32a4u" />
@@ -98,14 +99,16 @@
 		<Unit filename="../Secrets/secrets.h" />
 		<Unit filename="../communication/CRC_Calc.cpp" />
 		<Unit filename="../communication/CRC_Calc.h" />
-		<Unit filename="../communication/Cmulti2Buffer.cpp" />
-		<Unit filename="../communication/Cmulti2Buffer.h" />
+		<Unit filename="../communication/Cmulti2Buffer_v02.cpp" />
+		<Unit filename="../communication/Cmulti2Buffer_v02.h" />
 		<Unit filename="../communication/CmultiBusy.h" />
 		<Unit filename="../communication/Communication.cpp" />
 		<Unit filename="../communication/Communication.h" />
 		<Unit filename="../communication/Serial.cpp" />
 		<Unit filename="../communication/Serial.h" />
 		<Unit filename="../communication/UART.h" />
+		<Unit filename="../loraCmulti/loraCmulti.cpp" />
+		<Unit filename="../loraCmulti/loraCmulti.h" />
 		<Unit filename="../spi/SPI.cpp" />
 		<Unit filename="../spi/SPI.h" />
 		<Unit filename="../spi/spi_driver.cpp" />

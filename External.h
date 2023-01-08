@@ -7,7 +7,7 @@
 #include "CRC_Calc.h"
 #include "SPI.h"
 #include "LoRa.h"
-#include "Cmulti2Buffer.h"
+#include "Cmulti2Buffer_v02.h"
 #include "ComReceiver.h"
 #include "LoraRelais.h"
 
@@ -25,16 +25,16 @@ class LoRaClass;
 
 extern LoRaClass LoRa;
 
-extern volatile  uint8_t txIsReady;
-extern volatile  uint8_t rxIsReady;
+//extern volatile  uint8_t txIsReady;
+//extern volatile  uint8_t rxIsReady;
 
-extern volatile int8_t rxRssi;
-extern  char rxMessage[LORAMESSAGELENGTH];
+//extern volatile int8_t rxRssi;
+//extern  char rxMessage[LORAMESSAGELENGTH];
 
 extern uint8_t key[];
 
 extern char LoraCmultiBuffer[];
-extern Cmulti2Buffer loraCmulti;
+extern Cmulti2Buffer_v02 loraCmulti;
 
 
 
